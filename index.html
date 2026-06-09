@@ -1,16 +1,75 @@
 <!doctype html>
-<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FunLot Casinò Online</title><link rel="stylesheet" href="style.css"></head>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FunLot Casino 3D - Faces of Funseven</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-<div id="loader" class="loader"><div class="chip">FL</div><h1>FUNLOT</h1><p id="loadText">Connessione al casinò galattico...</p><div class="bar"><span></span></div></div>
-<header class="top"><div class="brand"><span class="logo">FL</span><div><b>FunLot Casinò Online</b><small>LotCoin • Jackpot • Bonus Litterio</small></div></div><nav><button onclick="showLobby()">Lobby</button><button onclick="openWallet()">Wallet</button><button onclick="resetGame()">Reset</button></nav><div class="balance">Saldo <b id="balance">1500</b> LC</div></header>
-<main id="app">
-<section id="lobby" class="lobby"><div class="hero"><h1>Benvenuto nel casinò più pericolosamente professionale del web</h1><p>Giochi demo senza soldi veri: slot, poker, roulette e bonus con LotCoin.</p><button class="primary" onclick="openGame('slot')">Gioca a Faces of Funseven</button></div><div class="cards">
-<div class="game-card hot"><h2>Faces of Funseven</h2><p>5 rulli, facce vere, bonus Litterio e riga jackpot.</p><button onclick="openGame('slot')">Apri</button></div>
-<div class="game-card"><h2>Funseven Poker</h2><p>Carte con le vostre facce. Coppie, tris, full e poker.</p><button onclick="openGame('poker')">Apri</button></div>
-<div class="game-card"><h2>Funcessen Roulette</h2><p>Pagamento 7 a 1, non 36. Se esce il 7: LotCoin Litterio.</p><button onclick="openGame('roulette')">Apri</button></div>
-<div class="game-card"><h2>Litterio Kick Bonus</h2><p>Calci digitali a Litterio, ogni calcio sputa monete.</p><button onclick="openGame('kick')">Apri</button></div>
-</div></section>
-<section id="game" class="game hidden"></section>
-</main>
-<div id="betModal" class="modal hidden"><div class="panel"><h2 id="modalTitle">Puntata</h2><p>Scegli quanto vuoi puntare per entrare nel gioco.</p><div class="betBtns"><button onclick="setBet(5)">5 LC</button><button onclick="setBet(10)">10 LC</button><button onclick="setBet(25)">25 LC</button><button onclick="setBet(50)">50 LC</button><button onclick="setBet(100)">100 LC</button></div><input id="customBet" type="number" min="1" value="25"><button class="primary" onclick="startSelectedGame()">Carica gioco</button></div></div>
-<div id="toast"></div><script src="script.js"></script></body></html>
+  <div class="bg-orbs"><span></span><span></span><span></span></div>
+  <div id="boot" class="boot">
+    <div class="boot-card">
+      <div class="mega-chip">FL</div>
+      <h1>FUNLOT</h1>
+      <h2 id="bootTitle">Caricamento casinò online...</h2>
+      <div class="loading"><i></i></div>
+      <p>Demo casinò satirico • LotCoin finti • Grafica 3D</p>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand" onclick="goLobby()">
+      <div class="brand-chip">FL</div>
+      <div><b>FunLot Casino Online</b><small>Faces • Litterio Bonus • 7x Roulette</small></div>
+    </div>
+    <nav>
+      <button onclick="goLobby()">Lobby</button>
+      <button onclick="openCashier()">Cassa</button>
+      <button onclick="openVip()">VIP</button>
+      <button onclick="resetAll()">Reset</button>
+    </nav>
+    <div class="wallet"><span>Saldo</span><b id="balance">1500</b><em>LC</em></div>
+  </header>
+
+  <main>
+    <section id="lobby" class="lobby">
+      <div class="casino-hero">
+        <div>
+          <p class="eyebrow">NUOVO CASINÒ SATIRICO 3D</p>
+          <h1>FunLot: il casinò dove la serietà è finta, ma i rulli girano davvero.</h1>
+          <p>Lobby stile casinò online, giochi demo, puntate, vincite, bonus Litterio, jackpot, paytable, autoplay, turbo e minigiochi.</p>
+          <div class="hero-actions"><button class="primary big" onclick="chooseGame('slot')">Gioca ora</button><button class="ghost big" onclick="openPromo()">Bonus benvenuto</button></div>
+        </div>
+        <div class="hero-machine" onclick="chooseGame('slot')">
+          <div class="mini-marquee">FACES OF FUNSEVEN</div>
+          <div class="mini-reels"><img src="assets/faces/face_stephan.png"><img src="assets/faces/litterio.png"><img src="assets/faces/face_blond.png"></div>
+          <div class="mini-base">JACKPOT 777</div>
+        </div>
+      </div>
+      <div class="games-grid">
+        <article class="game-tile featured" onclick="chooseGame('slot')"><span>HOT</span><h2>Faces of Funseven 3D</h2><p>Slot completa 5x3, 20 linee, scatter, wild Litterio, free spin, bonus calci e jackpot faccine.</p><button>Apri slot</button></article>
+        <article class="game-tile" onclick="chooseGame('poker')"><span>NEW</span><h2>Funseven Poker</h2><p>Carte premium con le facce del team e payout stile video poker.</p><button>Gioca poker</button></article>
+        <article class="game-tile" onclick="chooseGame('roulette')"><span>7X</span><h2>Funcessen Roulette</h2><p>Ruota truccata professionalmente: paga 7 a 1, il 7 sblocca LotCoin Litterio.</p><button>Gira ruota</button></article>
+        <article class="game-tile" onclick="chooseGame('kick')"><span>BONUS</span><h2>Litterio Kick</h2><p>Minigioco bonus arcade con monete che saltano fuori ad ogni calcio digitale.</p><button>Bonus</button></article>
+      </div>
+    </section>
+
+    <section id="game" class="game hidden"></section>
+  </main>
+
+  <div id="betModal" class="modal hidden">
+    <div class="modal-panel">
+      <button class="x" onclick="closeBet()">×</button>
+      <h2 id="betTitle">Puntata</h2>
+      <p>Scegli la puntata. Prima di aprire ogni gioco parte il caricamento stile casinò online.</p>
+      <div class="stake-grid"><button onclick="setStake(5)">5</button><button onclick="setStake(10)">10</button><button onclick="setStake(25)">25</button><button onclick="setStake(50)">50</button><button onclick="setStake(100)">100</button><button onclick="setStake(250)">250</button></div>
+      <label>Puntata personalizzata</label><input id="stakeInput" type="number" min="1" value="25" />
+      <button class="primary full" onclick="launchGame()">Carica gioco</button>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
