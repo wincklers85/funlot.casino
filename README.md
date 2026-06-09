@@ -1,26 +1,20 @@
-# FunLot Casino Online Demo
+# FunLot Casinò Online
 
-Sito casinò demo funzionante, pronto per GitHub Pages.
+Sito statico HTML/CSS/JS pronto per GitHub Pages.
 
 ## Giochi inclusi
+- **Faces of Funseven Slots**: slot a 5 rulli con rulli animati, puntata iniziale, saldo demo, vincite e messaggio `Hai Vinto Coglione!!` quando esce una riga completa di faccine uguali.
+- **Bonus Litterio**: se nella slot escono 5 Litterio parte il minigioco dei calci, con vincite in LotCoin.
+- **Funseven Poker**: poker demo con carte che usano le facce caricate.
+- **Funcessen Roulette**: roulette demo con pagamento 7 a 1 e premio speciale se esce il numero 7.
 
-- **Faces of Funseven Slots**: slot a 5 rulli con faccine. Se esce una riga di faccine compare il messaggio: `Hai Vinto Coglione!!`
-- **Bonus Litterio**: se escono 5 Litterio si sblocca il mini gioco dei calci, ogni calcio genera crediti demo.
-- **Funseven Poker**: video poker con carte personalizzate usando le facce.
-- **Funcessen Roulette**: roulette 0-36 con pagamento volutamente assurdo 7 a 1. Se esce il numero 7 si riceve 1 LotCoin.
-- **BlackLot Jack**: blackjack semplificato ma giocabile.
-- **Dadi FunLot**: gioco dadi con payout sui doppi.
-
-## Come pubblicarlo su GitHub Pages
-
-1. Crea un nuovo repository su GitHub.
+## Pubblicazione su GitHub Pages
+1. Crea una repository GitHub.
 2. Carica tutti i file contenuti in questa cartella.
-3. Vai su `Settings > Pages`.
-4. Scegli branch `main` e cartella `/root`.
-5. Salva e apri il link generato da GitHub Pages.
+3. Vai su Settings > Pages.
+4. Source: `Deploy from a branch`.
+5. Branch: `main`, cartella `/root`.
+6. Apri il link generato da GitHub Pages.
 
 ## Note
-
-Questo è un gioco demo/finto casinò: non usa soldi veri, non ha backend, non registra utenti e salva solo crediti/lotcoin nel `localStorage` del browser.
-
-Creato per Stephan Winckler.
+È un gioco demo/scherzoso: non usa soldi veri, non fa pagamenti reali e non è collegato a sistemi di gioco d’azzardo.
