@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FunLot Casino Online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <header class="topbar">
+    <div class="brand"><span class="chip">7</span><div><b>FunLot</b><small>Casino Online Demo</small></div></div>
+    <div class="wallet"><span>Crediti: <b id="credits">1500</b></span><span>LotCoin: <b id="lotcoins">0</b></span><button id="dailyBonus">Bonus giornaliero</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="over">Benvenuto nel casinò più serio mai visto da nessuno</p>
+        <h1>FunLot Casino</h1>
+        <p>Giochi demo, crediti finti, LotCoin con la faccia di Litterio e payout matematicamente discutibili.</p>
+      </div>
+      <img src="assets/lotcoin.png" class="coin" alt="LotCoin" />
+    </section>
+
+    <nav class="games" id="gamesNav">
+      <button data-game="slot" class="active">Faces of Funseven</button>
+      <button data-game="poker">Funseven Poker</button>
+      <button data-game="roulette">Funcessen Roulette</button>
+      <button data-game="blackjack">BlackLot Jack</button>
+      <button data-game="dice">Dadi FunLot</button>
+      <button data-game="bonus">Calci a Litterio</button>
+    </nav>
+
+    <section class="panel game active" id="slot">
+      <h2>Faces of Funseven Slots</h2>
+      <div class="machine">
+        <div class="reels" id="reels"></div>
+        <div class="controls"><input type="number" id="slotBet" value="25" min="1" max="200"><button id="spinBtn">SPIN</button></div>
+        <p id="slotMsg" class="msg">Prendi la riga di faccine per vincere.</p>
+      </div>
+    </section>
+
+    <section class="panel game" id="poker">
+      <h2>Funseven Poker</h2>
+      <p>Le carte hanno le vostre facce. Coppia, tris, full e poker pagano crediti demo.</p>
+      <div class="cards" id="pokerCards"></div>
+      <div class="controls"><input type="number" id="pokerBet" value="20" min="1" max="200"><button id="dealPoker">Dai carte</button></div>
+      <p id="pokerMsg" class="msg"></p>
+    </section>
+
+    <section class="panel game" id="roulette">
+      <h2>Funcessen Roulette</h2>
+      <p>Qui non si paga 36 a 1: si paga 7 a 1. Se esce il 7 vinci anche 1 LotCoin.</p>
+      <div class="rouletteWrap"><div id="wheel" class="wheel">7</div></div>
+      <div class="controls"><input type="number" id="roulNumber" value="7" min="0" max="36"><input type="number" id="roulBet" value="30" min="1" max="200"><button id="spinRoulette">Gira roulette</button></div>
+      <p id="rouletteMsg" class="msg"></p>
+    </section>
+
+    <section class="panel game" id="blackjack">
+      <h2>BlackLot Jack</h2>
+      <div class="bj"><h3>Banco</h3><div class="cards" id="dealerCards"></div><h3>Tu</h3><div class="cards" id="playerCards"></div></div>
+      <div class="controls"><input type="number" id="bjBet" value="25" min="1" max="200"><button id="newBj">Nuova mano</button><button id="hitBj">Carta</button><button id="standBj">Sto</button></div>
+      <p id="bjMsg" class="msg"></p>
+    </section>
+
+    <section class="panel game" id="dice">
+      <h2>Dadi FunLot</h2>
+      <div class="diceBox"><span id="die1">⚀</span><span id="die2">⚀</span></div>
+      <div class="controls"><input type="number" id="diceBet" value="15" min="1" max="200"><button id="rollDice">Tira dadi</button></div>
+      <p id="diceMsg" class="msg">Doppio 7 impossibile, quindi ci siamo adattati: doppio 6 paga.</p>
+    </section>
+
+    <section class="panel game" id="bonus">
+      <h2>Bonus: Calci a Litterio</h2>
+      <p>Si sblocca con 5 Litterio nella slot. Ogni calcio fa uscire crediti.</p>
+      <div class="kickGame"><img id="litterioKick" src="assets/litterio_coin_face.png" alt="Litterio"><div id="moneyRain"></div></div>
+      <div class="controls"><button id="kickBtn" disabled>Tira un calcio</button><button id="forceBonus">Demo bonus</button></div>
+      <p id="bonusMsg" class="msg">Bonus non attivo.</p>
+    </section>
+  </main>
+
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
